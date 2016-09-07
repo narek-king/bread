@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddBreadTable extends Migration
+class AddSubjectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,9 @@ class AddBreadTable extends Migration
     public function up()
     {
         //
-        Schema::create('breads', function (Blueprint $table) {
+        Schema::create('subjects', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date')->unique();
-            $table->string('title');
-            $table->string('read');
-            $table->string('verse');
-            $table->string('bibleinayear');
-            $table->string('text');
-            $table->string('aphorism');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
@@ -35,6 +29,6 @@ class AddBreadTable extends Migration
     public function down()
     {
         //
-        Schema::drop('breads');
+        Schema::drop('subjects');
     }
 }
