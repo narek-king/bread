@@ -21,7 +21,7 @@ class AddBreadTable extends Migration
             $table->string('read');
             $table->string('verse');
             $table->string('bibleinayear');
-            $table->string('text');
+            $table->text('text');
             $table->string('aphorism');
             $table->timestamps();
         });
